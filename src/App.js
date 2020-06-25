@@ -1,12 +1,12 @@
 import React from "react";
 import "./App.css";
-import Boards from "./Boards/Boards";
+import Users from "./Components/User/Users";
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <Boards />
+        <Users />
       </header>
     </div>
   );
