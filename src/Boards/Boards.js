@@ -9,8 +9,8 @@ class Boards extends React.Component {
   }
 
   componentDidMount() {
-    fetch("https://api.autism-tools.org/api/v1/boards").then((response) => {
-      return response.json();
+    fetch("https://api.autism-tools.org").then((response) => {
+      console.log("response: ", response.json());
     });
   }
 
