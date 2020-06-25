@@ -10,7 +10,8 @@ class Users extends React.Component {
   }
 
   componentDidMount() {
-    fetch("http://localhost:3001")
+    // fetch("http://localhost:3001"), { cors: "no-cors" })
+    fetch("https://api.autism-tools.org")
       .then((response) => response.json())
       .then((users) => this.setState({ users: users }));
   }
