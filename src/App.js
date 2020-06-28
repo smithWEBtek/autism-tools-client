@@ -1,14 +1,12 @@
 import React from "react";
-// import "./App.css";
 import Layout from "./UI/Layout/Layout";
-
-import Users from "./Components/User/Users";
+import Canvas from "./UI/Canvas/Canvas";
 
 function App() {
   return (
     <div className="App">
       <Layout />
-      <Users />
+      <Canvas />
     </div>
   );
 }

@@ -31,6 +31,9 @@ const MainNav = () => {
       <div className="navbar__link">
         <p className="navbar__link--text">playlist</p>
       </div>
+      <div className="navbar__link">
+        <p className="navbar__link--text">tags</p>
+      </div>
     </div>
   );
 };
