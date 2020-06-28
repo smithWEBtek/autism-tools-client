@@ -18,15 +18,10 @@ class Users extends React.Component {
 
   render() {
     const renderedUsers = this.state.users.map((user, index) => {
-      return <User user={user} index={index} />;
+      return <User user={user} key={index} />;
     });
 
-    return (
-      <div>
-        <h1>So far so good.</h1>
-        {renderedUsers}
-      </div>
-    );
+    return <div>{renderedUsers}</div>;
   }
 }
 
