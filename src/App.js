@@ -1,16 +1,13 @@
 import React from "react";
 // import "./App.css";
-import MainNav from "./UI/MainNav/MainNav";
+import Layout from "./UI/Layout/Layout";
 
 import Users from "./Components/User/Users";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        autism-tools.org
-        <MainNav />
-      </header>
+      <Layout />
       <Users />
     </div>
   );
