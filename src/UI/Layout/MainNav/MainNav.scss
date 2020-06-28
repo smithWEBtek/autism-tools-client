@@ -1,0 +1,22 @@
+.navbar {
+  background-color: rgb(84, 95, 107);
+  border: 0.1 px solid white;
+  height: auto;
+  margin: auto;
+  padding: 0 1rem;
+
+  &__link {
+    display: inline-block;
+    color: rgb(169, 174, 169);
+    margin: 0.5rem;
+    padding: 0.2rem;
+    // width: 5rem;
+
+    &:hover {
+      color: rgb(199, 250, 199);
+    }
+    &--text {
+      margin: auto;
+    }
+  }
+}

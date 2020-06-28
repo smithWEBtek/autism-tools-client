@@ -1,0 +1,28 @@
+.header {
+  background: transparentize($color: rgb(84, 95, 107), $amount: 0);
+  display: flex;
+  padding: 0.75rem 0 0 0.5rem;
+  width: 100%;
+  &__logo {
+    display: inline-block;
+    width: 4rem;
+    background: transparentize($color: rgb(84, 95, 107), $amount: 0);
+    &:hover {
+      transform: perspective(400px) scaleX(-1);
+      transition-duration: 2s;
+    }
+  }
+  &__title {
+    color: rgb(241, 243, 236);
+    font-size: 2rem;
+    font-weight: 500;
+    align-items: center;
+    // margin-left: 1rem;
+    &:hover {
+      color: rgb(199, 250, 199);
+      .header__logo {
+        transform: perspective(400px) scaleX(-1);
+      }
+    }
+  }
+}
