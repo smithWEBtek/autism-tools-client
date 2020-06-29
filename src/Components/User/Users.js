@@ -5,6 +5,7 @@ class Users extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      visible: false,
       users: [],
     };
   }
@@ -20,7 +21,7 @@ class Users extends React.Component {
       return <User user={user} key={index} />;
     });
 
-    return <div>{renderedUsers}</div>;
+    return this.state.visible ? <div>{renderedUsers}</div> : null;
   }
 }
 

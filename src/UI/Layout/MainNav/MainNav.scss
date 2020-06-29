@@ -6,11 +6,10 @@
   padding: 0 1rem;
 
   &__link {
-    display: inline-block;
     color: rgb(169, 174, 169);
+    display: inline-block;
     margin: 0.5rem;
     padding: 0.2rem;
-    // width: 5rem;
 
     &:hover {
       color: rgb(199, 250, 199);
