@@ -34,7 +34,7 @@ class Diets extends React.Component {
         <h2>
           <button onClick={this.showDiets}>Diets</button>
         </h2>
-        <p>Communications | Choices</p>
+        <p>Diets | Meals | Recipes | Rules</p>
         {renderedDiets}
       </div>
     );

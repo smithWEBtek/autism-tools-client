@@ -34,7 +34,7 @@ class Users extends React.Component {
         <h2>
           <button onClick={this.showUsers}>Users</button>
         </h2>
-        <p>Images | Videos | Links | Games | Audio</p>
+        <p>User Profile | Caregiver Instructions</p>
         {renderedUsers}
       </div>
     );
