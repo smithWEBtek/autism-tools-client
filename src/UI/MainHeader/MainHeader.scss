@@ -1,12 +1,14 @@
 .header {
   background: transparentize($color: rgb(84, 95, 107), $amount: 0);
   display: flex;
-  padding: 0.75rem 0 0 0.5rem;
+  padding-left: 0.5rem;
   width: 100%;
+  align-items: center;
   &__logo {
-    display: inline-block;
-    width: 4rem;
     background: transparentize($color: rgb(84, 95, 107), $amount: 0);
+    display: inline-block;
+    height: 3rem;
+    margin-top: 0.1rem;
     &:hover {
       transform: perspective(400px) scaleX(-1);
       transition-duration: 2s;
@@ -14,12 +16,11 @@
   }
   &__title {
     color: rgb(241, 243, 236);
-    font-size: 2rem;
-    font-weight: 500;
-    align-items: center;
+    font-size: 1.75rem;
+    font-weight: 400;
     // margin-left: 1rem;
     &:hover {
-      color: rgb(199, 250, 199);
+      color: rgb(0, 248, 0);
       .header__logo {
         transform: perspective(400px) scaleX(-1);
       }

@@ -6,16 +6,17 @@
   padding: 0 1rem;
 
   &__link {
-    color: rgb(169, 174, 169);
     display: inline-block;
     margin: 0.5rem;
-    padding: 0.2rem;
-
-    &:hover {
-      color: rgb(199, 250, 199);
-    }
+    padding-right: 0.2rem;
     &--text {
+      color: rgb(229, 241, 229);
       margin: auto;
+      text-decoration: none;
+
+      &:hover {
+        color: rgb(0, 248, 0);
+      }
     }
   }
 }

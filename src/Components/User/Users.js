@@ -21,7 +21,11 @@ class Users extends React.Component {
       return <User user={user} key={index} />;
     });
 
-    return this.state.visible ? <div>{renderedUsers}</div> : null;
+    return this.state.visible ? (
+      <div>{renderedUsers}</div>
+    ) : (
+      <h3>Users page</h3>
+    );
   }
 }
 

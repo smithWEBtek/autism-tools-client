@@ -17,6 +17,7 @@ class Boards extends React.Component {
   }
 
   showBoards = (event) => {
+    event.preventDefault();
     const visible = this.state.visible;
     this.setState({ visible: !visible });
   };
