@@ -16,15 +16,27 @@ class Users extends React.Component {
       .then((users) => this.setState({ users: users }));
   }
 
-  render() {
-    const renderedUsers = this.state.users.map((user, index) => {
-      return <User user={user} key={index} />;
-    });
+  showUsers = (event) => {
+    const visible = this.state.visible;
+    this.setState({ visible: !visible });
+  };
 
-    return this.state.visible ? (
-      <div>{renderedUsers}</div>
-    ) : (
-      <h3>Users page</h3>
+  render() {
+    let renderedUsers;
+    if (this.state.visible) {
+      renderedUsers = this.state.users.map((user, index) => {
+        return <User user={user} key={index} />;
+      });
+    }
+
+    return (
+      <div>
+        <h2>
+          <button onClick={this.showUsers}>Users</button>
+        </h2>
+        <p>Images | Videos | Links | Games | Audio</p>
+        {renderedUsers}
+      </div>
     );
   }
 }
