@@ -1,5 +1,5 @@
 import React from "react";
-import "./User.css";
+import "./User.scss";
 const User = (props) => {
   return (
     <div key={props.index} className="user-card">

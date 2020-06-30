@@ -1,5 +1,5 @@
 import React from "react";
-import "./Board.css";
+import "./Board.scss";
 const Board = (props) => {
   return (
     <div key={props.index} className="board-card">

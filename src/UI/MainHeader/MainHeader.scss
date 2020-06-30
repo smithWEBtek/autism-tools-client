@@ -1,9 +1,9 @@
 .header {
+  align-items: center;
   background: transparentize($color: rgb(84, 95, 107), $amount: 0);
   display: flex;
   padding-left: 0.5rem;
   width: 100%;
-  align-items: center;
   &__logo {
     background: transparentize($color: rgb(84, 95, 107), $amount: 0);
     display: inline-block;
@@ -18,7 +18,7 @@
     color: rgb(241, 243, 236);
     font-size: 1.75rem;
     font-weight: 400;
-    // margin-left: 1rem;
+    margin-left: 1rem;
     &:hover {
       color: rgb(0, 248, 0);
       .header__logo {
