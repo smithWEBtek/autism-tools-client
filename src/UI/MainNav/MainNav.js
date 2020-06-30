@@ -1,11 +1,10 @@
 import React from "react";
+import { Route, Link } from "react-router-dom";
 import "./MainNav.scss";
-import { BrowserRouter as Router, Link } from "react-router-dom";
-
 const MainNav = () => {
   return (
     <div className="navbar">
-      <Router>
+      <Route>
         <div className="navbar__link">
           <Link to="/login" className="navbar__link--text">
             login
@@ -17,38 +16,38 @@ const MainNav = () => {
           </Link>
         </div>
         <div className="navbar__link">
-          <Link to="/calendar" className="navbar__link--text">
-            calendar
+          <Link to="/events" className="navbar__link--text">
+            events
           </Link>
         </div>
         <div className="navbar__link">
-          <Link to="/diet" className="navbar__link--text">
-            diet
+          <Link to="/diets" className="navbar__link--text">
+            diets
           </Link>
         </div>
         <div className="navbar__link">
-          <Link to="/treatment" className="navbar__link--text">
-            treatment
+          <Link to="/treatments" className="navbar__link--text">
+            treatments
           </Link>
         </div>
         <div className="navbar__link">
-          <Link to="/doc" className="navbar__link--text">
-            doc
+          <Link to="/documents" className="navbar__link--text">
+            docs
           </Link>
         </div>
         <div className="navbar__link">
-          <Link to="/resource" className="navbar__link--text">
-            resource
+          <Link to="/resources" className="navbar__link--text">
+            resources
           </Link>
         </div>
         <div className="navbar__link">
-          <Link to="/board" className="navbar__link--text">
-            board
+          <Link to="/boards" className="navbar__link--text">
+            boards
           </Link>
         </div>
         <div className="navbar__link">
-          <Link to="/playlist" className="navbar__link--text">
-            playlist
+          <Link to="/playlists" className="navbar__link--text">
+            playlists
           </Link>
         </div>
         <div className="navbar__link">
@@ -56,7 +55,7 @@ const MainNav = () => {
             tags
           </Link>
         </div>
-      </Router>
+      </Route>
     </div>
   );
 };
