@@ -13,7 +13,7 @@ import Treatments from "./Components/Treatment/Treatments";
 import Documents from "./Components/Document/Documents";
 import Resources from "./Components/Resource/Resources";
 import Playlists from "./Components/Playlist/Playlists";
-import Boards from "./Components/Board/Boards";
+import Boards from "./Components/Boards/Boards";
 import Tags from "./Components/Tag/Tags";
 
 class App extends React.Component {
