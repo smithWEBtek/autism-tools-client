@@ -20,9 +20,9 @@ class App extends React.Component {
   render() {
     return (
       <div>
+        <MainHeader />
+        <MainNav />
         <Router>
-          <MainHeader />
-          <MainNav />
           <div className="maincanvas">
             <Switch>
               <Route path="/login">

@@ -5,7 +5,7 @@ import * as actions from '../../Store/Actions/index'
 
 import { Container } from 'reactstrap'
 import Modal from '../../UI/Modal/Modal'
-import Board from './Board/Board'
+// import Board from './Board/Board'
 import CreateBoard from './CreateBoard/CreateBoard'
 import EditBoard from './EditBoard/EditBoard'
 import BoardsList from './BoardsList/BoardsList'
@@ -22,12 +22,12 @@ class Boards extends Component {
     this.props.onFetchBoards();
   }
 
-  //********SHOW_RESOURCE form handling**************************
+  //********SHOW_BOARD form handling**************************
   showBoardClose = () => {
     this.setState({ showBoard: false })
   }
 
-  //********CREATE_RESOURCE form handling **************************
+  //********CREATE_BOARD form handling **************************
   createBoardForm = () => {
     this.setState({ createBoard: true })
   }
@@ -42,7 +42,7 @@ class Boards extends Component {
     this.setState({ createBoard: false })
   }
 
-  //********EDIT_RESOURCE form handling**************************
+  //********EDIT_BOARD form handling**************************
   showEditBoardForm = (id) => {
     let boardData = this.props.boards.filter(board => board.id === id)[0]
     this.setState({
@@ -58,7 +58,7 @@ class Boards extends Component {
     })
   }
 
-  //********DELETE_RESOURCE handling****************
+  //********DELETE_BOARD handling****************
   deleteBoard = (id) => {
     let { history } = this.props
     this.props.onDeleteBoard(id, history)
@@ -66,13 +66,13 @@ class Boards extends Component {
 
   render() {
 
-    const { match, boards } = this.props;
+    const { boards } = this.props;
 
     return (
       <Container>
         <hr />
 
-        {/*********CREATE RESOURCE MODAL********************************************/}
+        {/*********CREATE BOARD MODAL********************************************/}
         <button onClick={this.createBoardForm}>Add Board</button>
         <Modal
           show={this.state.createBoard}
@@ -82,7 +82,7 @@ class Boards extends Component {
             createBoardCancel={this.createBoardFormCancel} />
         </Modal>
 
-        {/**********EDIT RESOURCE MODAL**********************************************/}
+        {/**********EDIT BOARD MODAL**********************************************/}
         <Modal
           show={this.state.editBoard}
           modalClosed={this.closeEditBoardForm}>
@@ -92,13 +92,13 @@ class Boards extends Component {
           /> : null}
         </Modal>
 
-        {/**********RESOURCES LIST**********************************************/}
+        {/**********BOARDS LIST**********************************************/}
         <div>
           <Switch>
-            {/* <Route path={`${match.url}/:id/edit`} exact component={EditBoard} />
-            <Route path={`${match.url}/new`} exact component={CreateBoard} />
-            <Route path={`${match.url}/:id`} exact component={Board} />
-            <Route path={match.ur} exact /> */}
+            {/* <Route path={`${match.url}/:id/edit`} exact component={EditBoard} /> */}
+            {/* <Route path={`${match.url}/new`} exact component={CreateBoard} /> */}
+            {/* <Route path={`${match.url}/:id`} exact component={Board} /> */}
+            <Route path={Location.href} exact />
           </Switch>
         </div>
         <div>

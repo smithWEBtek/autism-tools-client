@@ -20,12 +20,6 @@ class CreateBoard extends Component {
     this.setState({ [name]: value })
   }
 
-  // handleTeacherSelect = (event) => {
-  //   this.setState({
-  //     teacher_id: this.props.teachers.find(teacher => teacher.lastname === event.target.value).id
-  //   })
-  // }
-
   handleSubmit = (e) => {
     e.preventDefault();
     const newBoardData = this.state;
@@ -38,57 +32,29 @@ class CreateBoard extends Component {
   }
 
   render() {
-    // const teacherOptions = this.props.teachers.map(teacher => {
-    //   return <option value={teacher.lastname} id={teacher.id} key={teacher.id}>{teacher.lastname}</option>
-    // })
-
     return (
       <div>
         <p>Complete form and click 'Add Board'</p>
         <form onSubmit={this.handleSubmit}>
-          <p><label htmlFor="student_name">First name </label>
+          <p><label htmlFor="student_name">name </label>
             <input
               type="text"
-              name="firstname"
-              value={this.state.firstname}
+              name="name"
+              value={this.state.name}
               onChange={(event) => this.handleOnChange(event)}
-              placeholder="firstname"
+              placeholder="name"
               required />
           </p>
-          <p><label>Last name </label>
+          <p><label>description </label>
             <input
               type="text"
-              name="lastname"
-              value={this.state.lastname}
+              name="description"
+              value={this.state.description}
               onChange={(event) => this.handleOnChange(event)}
-              placeholder="lastname"
+              placeholder="description"
               required />
           </p>
-          <p><label>Email </label>
-            <input
-              type="text"
-              name="email"
-              value={this.state.email}
-              onChange={(event) => this.handleOnChange(event)}
-              placeholder="email"
-              required />
-          </p>
-          <p><label>Level</label>
-            <input
-              type="text"
-              name="level"
-              value={this.state.level}
-              onChange={(event) => this.handleOnChange(event)}
-              placeholder="level"
-              required />
-          </p>
-          {/* <p><label>Select Teacher</label>
-            <select
-              value={this.state.teacher.lastname}
-              onChange={(event) => this.handleTeacherSelect(event)}>
-              {teacherOptions}
-            </select>
-          </p> */}
+
           <button
             type="button"
             onClick={this.props.createBoardCancel}
