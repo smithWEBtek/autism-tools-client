@@ -7,7 +7,7 @@ import thunk from 'redux-thunk'
 import boardReducer from './Store/Reducers/BoardReducer'
 import App from './App'
 import classes from './index.scss'
-import ErrorBoundary from './ErrorBoundary';
+// import ErrorBoundary from './ErrorBoundary';
 
 const rootReducer = combineReducers({
   boards: boardReducer,
@@ -29,11 +29,11 @@ const store = createStore(rootReducer, composeEnhancers(applyMiddleware(logger, 
 
 const app = (
   <Provider store={store}>
-    <ErrorBoundary>
-      <BrowserRouter>
-        <App className={classes.Body} />
-      </BrowserRouter>
-    </ErrorBoundary>
+    {/* <ErrorBoundary> */}
+    <BrowserRouter>
+      <App className={classes.Body} />
+    </BrowserRouter>
+    {/* </ErrorBoundary> */}
   </Provider>
 )
 
