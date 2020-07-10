@@ -5,10 +5,9 @@ import * as actions from '../../Store/Actions/index'
 
 import { Container } from 'reactstrap'
 import Modal from '../../UI/Modal/Modal'
-// import Board from './Board/Board'
+import Board from './Board/Board'
 import CreateBoard from './CreateBoard/CreateBoard'
 import EditBoard from './EditBoard/EditBoard'
-import BoardsList from './BoardsList/BoardsList'
 
 class Boards extends Component {
   state = {
@@ -19,7 +18,10 @@ class Boards extends Component {
   }
 
   componentDidMount() {
-    this.props.onFetchBoards();
+    this.props.onFetchBoards()
+    // this.setState({
+    //   boards: this.props.onFetchBoards()
+    // })
   }
 
   //********SHOW_BOARD form handling**************************
@@ -65,8 +67,14 @@ class Boards extends Component {
   }
 
   render() {
-
-    const { boards } = this.props;
+    const renderBoards = this.props.boards.map((board, index) => {
+      return (
+        <Board
+          key={index}
+          board={board}
+        />
+      )
+    })
 
     return (
       <Container>
@@ -102,11 +110,8 @@ class Boards extends Component {
           </Switch>
         </div>
         <div>
-          <div><h5 className="IndexHeaderBackground">ALL boards</h5>
-            <BoardsList
-              boards={boards}
-              edit={(id) => this.showEditBoardForm(id)}
-              deleteBoard={(id) => this.deleteBoard(id)} />
+          <div><h1>Boards</h1>
+            {renderBoards}
           </div>
         </div>
       </Container >
@@ -116,7 +121,7 @@ class Boards extends Component {
 
 const mapStateToProps = state => {
   return {
-    boards: state.boards.boards
+    boards: state.brd.boards
   };
 }
 

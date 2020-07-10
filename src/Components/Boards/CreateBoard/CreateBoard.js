@@ -11,7 +11,7 @@ class CreateBoard extends Component {
     }
   }
 
-  componentWillMount() {
+  componentDidMount() {
     // this.props.onFetchTeachers()
   }
 
