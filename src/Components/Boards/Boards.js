@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Route, Switch } from 'react-router-dom';
+// import { Route, Switch } from 'react-router-dom';
 import { connect } from 'react-redux';
 import * as actions from '../../Store/Actions/index'
 
@@ -72,6 +72,7 @@ class Boards extends Component {
         <Board
           key={index}
           board={board}
+          edit={(id) => this.showEditBoardForm(id)}
         />
       )
     })
@@ -102,12 +103,12 @@ class Boards extends Component {
 
         {/**********BOARDS LIST**********************************************/}
         <div>
-          <Switch>
-            {/* <Route path={`${match.url}/:id/edit`} exact component={EditBoard} /> */}
-            {/* <Route path={`${match.url}/new`} exact component={CreateBoard} /> */}
-            {/* <Route path={`${match.url}/:id`} exact component={Board} /> */}
-            <Route path={Location.href} exact />
-          </Switch>
+          {/* <Switch> */}
+          {/* <Route path={`${match.url}/:id/edit`} exact component={EditBoard} /> */}
+          {/* <Route path={`${match.url}/new`} exact component={CreateBoard} /> */}
+          {/* <Route path={`${match.url}/:id`} exact component={Board} /> */}
+          {/* <Route path={Location.href} exact /> */}
+          {/* </Switch> */}
         </div>
         <div>
           <div><h1>Boards</h1>
