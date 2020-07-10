@@ -1,6 +1,6 @@
 // const API_URL = process.env.REACT_APP_API_URL || "https://api.autism-tools.org/api/v1/boards"
-// const API_URL = "https://api.autism-tools.org/api/v1"
-const API_URL = "http://localhost:3001/api/v1"
+const API_URL = "https://api.autism-tools.org/api/v1"
+// const API_URL = "http://localhost:3001/api/v1"
 
 const BoardService = {
   createBoard(board) {
@@ -13,7 +13,6 @@ const BoardService = {
       .then(response => response.json())
       .catch(error => {
         console.log('[BoardService][createBoard] ERROR: ', error)
-        debugger;
       })
   },
   fetchBoards() {
