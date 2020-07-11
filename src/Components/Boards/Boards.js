@@ -73,13 +73,22 @@ class Boards extends Component {
           key={index}
           board={board}
           edit={(id) => this.showEditBoardForm(id)}
+          delete={(id) => this.deleteBoard(id)}
         />
       )
     })
 
     return (
       <Container>
-        <hr />
+        {/*********SHOW BOARD MODAL********************************************/}
+        {/* <button onClick={this.showBoard}>Show Board</button>
+        <Modal
+          show={this.state.showBoard}
+          modalClosed={this.closeShowBoard}>
+          <Board
+            board={(newBoardData) => this.createBoard(newBoardData)}
+            createBoardCancel={this.createBoardFormCancel} />
+        </Modal> */}
 
         {/*********CREATE BOARD MODAL********************************************/}
         <button onClick={this.createBoardForm}>Add Board</button>
@@ -101,15 +110,7 @@ class Boards extends Component {
           /> : null}
         </Modal>
 
-        {/**********BOARDS LIST**********************************************/}
-        <div>
-          {/* <Switch> */}
-          {/* <Route path={`${match.url}/:id/edit`} exact component={EditBoard} /> */}
-          {/* <Route path={`${match.url}/new`} exact component={CreateBoard} /> */}
-          {/* <Route path={`${match.url}/:id`} exact component={Board} /> */}
-          {/* <Route path={Location.href} exact /> */}
-          {/* </Switch> */}
-        </div>
+
         <div>
           <div><h1>Boards</h1>
             {renderBoards}
