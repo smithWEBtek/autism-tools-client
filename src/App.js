@@ -19,10 +19,10 @@ import Tags from "./Components/Tag/Tags";
 class App extends React.Component {
   render() {
     return (
-      <div>
-        <MainHeader />
-        <MainNav />
-        <Router>
+      <Router>
+        <div>
+          <MainHeader />
+          <MainNav />
           <div className="maincanvas">
             <Switch>
               <Route path="/login">
@@ -57,8 +57,8 @@ class App extends React.Component {
               </Route>
             </Switch>
           </div>
-        </Router>
-      </div>
+        </div>
+      </Router>
     );
   }
 }
