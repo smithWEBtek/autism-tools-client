@@ -1,5 +1,5 @@
 import React from "react";
-import Diet from "./Diet";
+import Diet from "./Diet/Diet";
 
 class Diets extends React.Component {
   constructor(props) {
