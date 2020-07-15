@@ -8,7 +8,7 @@ import MainNav from "./UI/MainNav/MainNav";
 import Login from "./Components/Login/Login";
 import Users from "./Components/User/Users";
 import Events from "./Components/Event/Events";
-import Diets from "./Components/Diet/Diets";
+import Diets from "./Components/Diets/Diets";
 import Treatments from "./Components/Treatment/Treatments";
 import Documents from "./Components/Document/Documents";
 import Resources from "./Components/Resource/Resources";
