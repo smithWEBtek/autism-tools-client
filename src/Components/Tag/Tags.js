@@ -1,6 +1,8 @@
 import React from "react";
 import Tag from "./Tag";
 
+const API_URL = process.env.REACT_APP_API_URL
+
 class Tags extends React.Component {
   constructor(props) {
     super(props);
@@ -11,7 +13,7 @@ class Tags extends React.Component {
   }
 
   componentDidMount() {
-    fetch("https://api.autism-tools.org/api/v1/tags")
+    fetch(`${API_URL}/tags`)
       .then((response) => response.json())
       .then((tags) => this.setState({ tags: tags }));
   }

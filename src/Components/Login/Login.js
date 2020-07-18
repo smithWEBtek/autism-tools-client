@@ -7,13 +7,13 @@ const Login = () => {
       <h3>Login page</h3>
       <form>
         <p>
-          <input type="text" value="Enter username"></input>
+          <input type="text" defaultValue="Enter username"></input>
         </p>
         <p>
-          <input type="text" value="Enter email"></input>
+          <input type="text" defaultValue="Enter email"></input>
         </p>
         <p>
-          <input type="text" value="Enter password"></input>
+          <input type="text" defaultValue="Enter password"></input>
         </p>
         <p>
           <button type="cancel" className="button-cancel">
