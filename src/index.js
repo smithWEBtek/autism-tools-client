@@ -8,6 +8,11 @@ import boardReducer from './Store/Reducers/BoardReducer'
 import App from './App'
 import './index.scss'
 // import ErrorBoundary from './ErrorBoundary';
+let dotenv = require('dotenv')
+let dotenvExpand = require('dotenv-expand')
+
+let myEnv = dotenv.config()
+dotenvExpand(myEnv)
 
 const rootReducer = combineReducers({
   brd: boardReducer,
