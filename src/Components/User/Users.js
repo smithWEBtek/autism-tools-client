@@ -1,6 +1,8 @@
 import React from "react";
 import User from "./User";
 
+const API_URL = process.env.REACT_APP_API_URL
+
 class Users extends React.Component {
   constructor(props) {
     super(props);
@@ -11,7 +13,7 @@ class Users extends React.Component {
   }
 
   componentDidMount() {
-    fetch("https://api.autism-tools.org/api/v1/users")
+    fetch(`${API_URL}/users`)
       .then((response) => response.json())
       .then((users) => this.setState({ users: users }));
   }

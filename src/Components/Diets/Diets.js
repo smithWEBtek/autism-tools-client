@@ -1,5 +1,6 @@
 import React from "react";
 import Diet from "./Diet/Diet";
+const API_URL = process.env.REACT_APP_API_URL
 
 class Diets extends React.Component {
   constructor(props) {
@@ -11,7 +12,7 @@ class Diets extends React.Component {
   }
 
   componentDidMount() {
-    fetch("https://api.autism-tools.org/api/v1/diets")
+    fetch(`${API_URL}/diets`)
       .then((response) => response.json())
       .then((diets) => this.setState({ diets: diets }));
   }

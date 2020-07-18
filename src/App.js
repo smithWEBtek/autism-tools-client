@@ -18,6 +18,7 @@ import Tags from "./Components/Tag/Tags";
 
 class App extends React.Component {
   render() {
+    console.log("process.env.REACT_APP_API_URL: ", process.env.REACT_APP_API_URL)
     return (
       <Router>
         <div>
