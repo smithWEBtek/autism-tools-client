@@ -19,9 +19,6 @@ class Boards extends Component {
 
   componentDidMount() {
     this.props.onFetchBoards()
-    // this.setState({
-    //   boards: this.props.onFetchBoards()
-    // })
   }
 
   //********SHOW_BOARD form handling**************************
