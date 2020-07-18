@@ -56,6 +56,9 @@ class App extends React.Component {
               <Route path="/tags">
                 <Tags />
               </Route>
+              <Route exact path="/">
+                <Login />
+              </Route>
             </Switch>
           </div>
         </div>
