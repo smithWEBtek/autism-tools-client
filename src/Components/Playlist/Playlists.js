@@ -1,6 +1,8 @@
 import React from "react";
 import Playlist from "./Playlist";
 
+const API_URL = process.env.REACT_APP_API_URL
+
 class Playlists extends React.Component {
   constructor(props) {
     super(props);
@@ -11,7 +13,7 @@ class Playlists extends React.Component {
   }
 
   componentDidMount() {
-    fetch("https://api.autism-tools.org/api/v1/playlists")
+    fetch(`${API_URL}/playlists`)
       .then((response) => response.json())
       .then((playlists) => this.setState({ playlists: playlists }));
   }

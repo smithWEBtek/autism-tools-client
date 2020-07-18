@@ -1,6 +1,8 @@
 import React from "react";
 import Resource from "./Resource";
 
+const API_URL = process.env.REACT_APP_API_URL
+
 class Resources extends React.Component {
   constructor(props) {
     super(props);
@@ -11,7 +13,7 @@ class Resources extends React.Component {
   }
 
   componentDidMount() {
-    fetch("https://api.autism-tools.org/api/v1/resources")
+    fetch(`${API_URL}/resources`)
       .then((response) => response.json())
       .then((resources) => this.setState({ resources: resources }));
   }

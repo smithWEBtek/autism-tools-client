@@ -1,6 +1,8 @@
 import React from "react";
 import Event from "./Event";
 
+const API_URL = process.env.REACT_APP_API_URL
+
 class Events extends React.Component {
   constructor(props) {
     super(props);
@@ -11,7 +13,7 @@ class Events extends React.Component {
   }
 
   componentDidMount() {
-    fetch("https://api.autism-tools.org/api/v1/events")
+    fetch(`${API_URL}/events`)
       .then((response) => response.json())
       .then((events) => this.setState({ events: events }));
   }
