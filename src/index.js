@@ -7,7 +7,7 @@ import thunk from 'redux-thunk'
 import boardReducer from './Store/Reducers/BoardReducer'
 import App from './App'
 import './index.scss'
-// import ErrorBoundary from './ErrorBoundary';
+import ErrorBoundary from './ErrorBoundary';
 let dotenv = require('dotenv')
 let dotenvExpand = require('dotenv-expand')
 
@@ -35,9 +35,9 @@ const store = createStore(rootReducer, composeEnhancers(applyMiddleware(logger, 
 const app = (
   <BrowserRouter>
     <Provider store={store}>
-      {/* <ErrorBoundary> */}
-      <App className="body" />
-      {/* </ErrorBoundary> */}
+      <ErrorBoundary>
+        <App className="body" />
+      </ErrorBoundary>
     </Provider>
   </BrowserRouter>
 )
