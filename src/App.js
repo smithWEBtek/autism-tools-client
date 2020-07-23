@@ -8,12 +8,12 @@ import MainNav from "./UI/MainNav/MainNav";
 import Login from "./Components/Login/Login";
 import Users from "./Components/User/Users";
 import Events from "./Components/Event/Events";
-import Diets from "./Components/Diets/Diets";
+import Diets from "./Components/Diet/Diets";
 import Treatments from "./Components/Treatment/Treatments";
 import Documents from "./Components/Document/Documents";
 import Resources from "./Components/Resource/Resources";
 import Playlists from "./Components/Playlist/Playlists";
-import Boards from "./Components/Boards/Boards";
+import Boards from "./Components/Board/Boards";
 import Tags from "./Components/Tag/Tags";
 
 class App extends React.Component {
