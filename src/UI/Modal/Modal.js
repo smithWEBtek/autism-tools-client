@@ -1,12 +1,11 @@
 import React from 'react'
 import './Modal.scss'
 import Backdrop from '../Backdrop/Backdrop'
-import { Container } from 'reactstrap'
 
 const Modal = (props) => {
 
   return (
-    <Container>
+    <div>
       <Backdrop show={props.show} clicked={props.modalClosed} />
       <div
         className="Modal"
@@ -20,7 +19,7 @@ const Modal = (props) => {
         }}>
         {props.children}
       </div>
-    </Container>
+    </div>
 
   )
 }

@@ -3,9 +3,9 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import * as actions from '../../Store/Actions/index'
 
-import { Container } from 'reactstrap'
 import Modal from '../../UI/Modal/Modal'
 import Board from './Board/Board'
+import BoardsIndex from './BoardsIndex/BoardsIndex'
 import CreateBoard from './CreateBoard/CreateBoard'
 import EditBoard from './EditBoard/EditBoard'
 
@@ -18,16 +18,22 @@ class Boards extends Component {
   }
 
   componentDidMount() {
+    // console.log('[Boards][this.state.boards][componentDidMount before]: ', this.state.boards)
     this.props.onFetchBoards()
+    // console.log('[Boards][this.state.boards][componentDidMount after]: ', this.state.boards)
   }
 
   //********SHOW_BOARD form handling**************************
+  showBoard = () => {
+    this.setState({ showBoard: true })
+  }
+
   showBoardClose = () => {
     this.setState({ showBoard: false })
   }
 
   //********CREATE_BOARD form handling **************************
-  createBoardForm = () => {
+  createBoardFormOpen = () => {
     this.setState({ createBoard: true })
   }
 
@@ -37,6 +43,7 @@ class Boards extends Component {
 
   createBoard = (newBoardData) => {
     const { history } = this.props
+
     this.props.onCreateBoard(newBoardData, history)
     this.setState({ createBoard: false })
   }
@@ -64,40 +71,32 @@ class Boards extends Component {
   }
 
   render() {
-    const renderBoards = this.props.boards.map((board, index) => {
-      return (
-        <Board
-          key={index}
-          board={board}
-          edit={(id) => this.showEditBoardForm(id)}
-          delete={(id) => this.deleteBoard(id)}
-        />
-      )
-    })
-
+    let { history } = this.props
+    console.log("history: ", history)
+    console.log("this.props", this.props)
     return (
-      <Container>
-        {/*********SHOW BOARD MODAL********************************************/}
-        {/* <button onClick={this.showBoard}>Show Board</button>
+      <div>
+        {/*********SHOW BOARD MODAL********************/}
+        {/* < button onClick={this.showBoard} > Show Board</button > */}
         <Modal
           show={this.state.showBoard}
           modalClosed={this.closeShowBoard}>
           <Board
             board={(newBoardData) => this.createBoard(newBoardData)}
             createBoardCancel={this.createBoardFormCancel} />
-        </Modal> */}
+        </Modal>
 
-        {/*********CREATE BOARD MODAL********************************************/}
-        <button onClick={this.createBoardForm}>Add Board</button>
+        {/*********CREATE BOARD MODAL********************/}
+        <button onClick={this.createBoardFormOpen}>Add Board</button>
         <Modal
           show={this.state.createBoard}
           modalClosed={this.createBoardFormCancel}>
           <CreateBoard
-            createBoard={(newBoardData) => this.createBoard(newBoardData)}
+            createBoard={(newBoardData) => this.createBoard(newBoardData, history)}
             createBoardCancel={this.createBoardFormCancel} />
         </Modal>
 
-        {/**********EDIT BOARD MODAL**********************************************/}
+        {/**********EDIT BOARD MODAL**********************/}
         <Modal
           show={this.state.editBoard}
           modalClosed={this.closeEditBoardForm}>
@@ -106,14 +105,18 @@ class Boards extends Component {
             close={() => this.closeEditBoardForm()}
           /> : null}
         </Modal>
-
-
+        {/**********BOARD Index **************************/}
         <div>
-          <div><h1>Boards</h1>
-            {renderBoards}
+          <div><h1>BoardsIndex</h1>
+            <BoardsIndex
+              boards={this.props.boards}
+              // showBoard={(id) => this.showBoard(id)}
+              editBoard={(id) => this.showEditBoardForm(id)}
+              deleteBoard={(id) => this.deleteBoard(id)}
+            />
           </div>
         </div>
-      </Container >
+      </div >
     )
   }
 };

@@ -68,7 +68,6 @@ const reducer = (state = initialState, action) => {
 
     case actionTypes.UPDATE_BOARD:
       //const boardData = action.updatedBoardData
-      //debugger
       //const boardIndex = state.boards.findIndex(board => board.id === boardData.id);
       // const stateTemp = {
       //   ...state,
