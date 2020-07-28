@@ -33,13 +33,13 @@ const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose
 const store = createStore(rootReducer, composeEnhancers(applyMiddleware(logger, thunk)))
 
 const app = (
-  <BrowserRouter>
-    <Provider store={store}>
+  <Provider store={store}>
+    <BrowserRouter>
       <ErrorBoundary>
         <App className="body" />
       </ErrorBoundary>
-    </Provider>
-  </BrowserRouter>
+    </BrowserRouter>
+  </Provider>
 )
 
 ReactDOM.render(app, document.getElementById('root'))
