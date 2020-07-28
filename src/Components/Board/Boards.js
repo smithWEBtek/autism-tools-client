@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-// import { Route, Switch } from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
 import { connect } from 'react-redux';
 import * as actions from '../../Store/Actions/index'
 
@@ -12,24 +12,12 @@ import EditBoard from './EditBoard/EditBoard'
 class Boards extends Component {
   state = {
     board: '',
-    showBoard: false,
     createBoard: false,
     editBoard: false
   }
 
   componentDidMount() {
-    // console.log('[Boards][this.state.boards][componentDidMount before]: ', this.state.boards)
     this.props.onFetchBoards()
-    // console.log('[Boards][this.state.boards][componentDidMount after]: ', this.state.boards)
-  }
-
-  //********SHOW_BOARD form handling**************************
-  showBoard = () => {
-    this.setState({ showBoard: true })
-  }
-
-  showBoardClose = () => {
-    this.setState({ showBoard: false })
   }
 
   //********CREATE_BOARD form handling **************************
@@ -50,7 +38,7 @@ class Boards extends Component {
 
   //********EDIT_BOARD form handling**************************
   showEditBoardForm = (id) => {
-    let boardData = this.props.boards.filter(board => board.id === id)[0]
+    let boardData = this.state.boards.filter(board => board.id === id)[0]
     this.setState({
       board: boardData,
       editBoard: true
@@ -72,20 +60,13 @@ class Boards extends Component {
 
   render() {
     let { history } = this.props
+    let match = window.location.href
+
     console.log("history: ", history)
     console.log("this.props", this.props)
+
     return (
       <div>
-        {/*********SHOW BOARD MODAL********************/}
-        {/* < button onClick={this.showBoard} > Show Board</button > */}
-        <Modal
-          show={this.state.showBoard}
-          modalClosed={this.closeShowBoard}>
-          <Board
-            board={(newBoardData) => this.createBoard(newBoardData)}
-            createBoardCancel={this.createBoardFormCancel} />
-        </Modal>
-
         {/*********CREATE BOARD MODAL********************/}
         <button onClick={this.createBoardFormOpen}>Add Board</button>
         <Modal
@@ -105,16 +86,24 @@ class Boards extends Component {
             close={() => this.closeEditBoardForm()}
           /> : null}
         </Modal>
+
         {/**********BOARD Index **************************/}
         <div>
           <div><h1>BoardsIndex</h1>
             <BoardsIndex
               boards={this.props.boards}
-              // showBoard={(id) => this.showBoard(id)}
               editBoard={(id) => this.showEditBoardForm(id)}
               deleteBoard={(id) => this.deleteBoard(id)}
             />
           </div>
+        </div>
+        <div>
+          <Switch>
+            <Route path={`${match.url}/:id/edit`} component={EditBoard} />
+            <Route path={`${match.url}/new`} exact component={CreateBoard} />
+            <Route path={`${match.url}/:id`} component={Board} />
+            <Route path={match.url} exact />
+          </Switch>
         </div>
       </div >
     )

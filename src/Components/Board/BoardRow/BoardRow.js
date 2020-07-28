@@ -9,7 +9,8 @@ const BoardRow = (props) => {
         <th scope="row">{props.board.id}</th>
         <td>
           <Link
-            to={`/boards/${props.board.id}`}>{props.board.name}
+            to={`/boards/${props.board.id}`}
+          >{props.board.name}
           </Link>
         </td>
 

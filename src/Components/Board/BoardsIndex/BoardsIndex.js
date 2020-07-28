@@ -9,7 +9,6 @@ const BoardsIndex = (props) => {
       <BoardRow
         key={board.id}
         board={board}
-        // show={props.showBoard}
         editBoard={props.editBoard}
         deleteBoard={props.deleteBoard}
       />
