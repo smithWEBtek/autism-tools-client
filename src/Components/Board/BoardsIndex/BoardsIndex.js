@@ -1,5 +1,5 @@
 import React from 'react'
-// import './BoardsIndex.scss'
+import './BoardsIndex.scss'
 import BoardRow from '../BoardRow/BoardRow'
 
 const BoardsIndex = (props) => {

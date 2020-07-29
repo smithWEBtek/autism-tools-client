@@ -38,7 +38,7 @@ class Boards extends Component {
 
   //********EDIT_BOARD form handling**************************
   showEditBoardForm = (id) => {
-    let boardData = this.state.boards.filter(board => board.id === id)[0]
+    let boardData = this.props.boards.filter(board => board.id === id)[0]
     this.setState({
       board: boardData,
       editBoard: true
