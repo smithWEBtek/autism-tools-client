@@ -60,7 +60,7 @@ class Boards extends Component {
 
   render() {
     let { history } = this.props
-    let match = window.location.href
+    let baseUrl = window.location.host + '/boards'
 
     console.log("history: ", history)
     console.log("this.props", this.props)
@@ -99,10 +99,10 @@ class Boards extends Component {
         </div>
         <div>
           <Switch>
-            <Route path={`${match.url}/:id/edit`} component={EditBoard} />
-            <Route path={`${match.url}/new`} exact component={CreateBoard} />
-            <Route path={`${match.url}/:id`} component={Board} />
-            <Route path={match.url} exact />
+            <Route path={`${baseUrl}/:id/edit`} component={EditBoard} />
+            <Route path={`${baseUrl}/new`} exact component={CreateBoard} />
+            <Route path={`${baseUrl}/:id`} component={Board} />
+            <Route path={baseUrl} exact component={Boards} />
           </Switch>
         </div>
       </div >
