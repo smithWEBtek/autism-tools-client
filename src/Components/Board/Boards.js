@@ -12,12 +12,26 @@ import EditBoard from './EditBoard/EditBoard'
 class Boards extends Component {
   state = {
     board: '',
+    showBoard: false,
     createBoard: false,
     editBoard: false
   }
 
   componentDidMount() {
     this.props.onFetchBoards()
+  }
+
+  //********SHOW_STUDENT handling*****************
+  showBoardClose = () => {
+    this.setState({ showBoard: false })
+  }
+
+  showBoard = (id) => {
+    const board = this.state.boards.filter(board => board.id === id)[0]
+    this.setState({
+      showBoard: true,
+      board: board
+    })
   }
 
   //********CREATE_BOARD form handling **************************
