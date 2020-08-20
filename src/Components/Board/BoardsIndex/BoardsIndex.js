@@ -11,6 +11,8 @@ const BoardsIndex = (props) => {
         board={board}
         editBoard={props.editBoard}
         deleteBoard={props.deleteBoard}
+        showBoard={props.showBoard}
+        close={props.closeShowBoard}
       />
     )
   })

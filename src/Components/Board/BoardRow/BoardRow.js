@@ -1,7 +1,5 @@
 import React from 'react'
-// import Board from '../Board/Board'
 import './BoardRow.scss'
-import { Link } from 'react-router-dom'
 
 const BoardRow = (props) => {
   return (
@@ -9,9 +7,10 @@ const BoardRow = (props) => {
       <tr key={props.board.id} className="board-row">
         <th scope="row">{props.board.id}</th>
         <td>
-          <Link
-            to={`/boards/${props.board.id}`}>{props.board.name}
-          </Link>
+          <button
+            type='button'
+            className="Edit"
+            onClick={() => props.showBoard(props.board.id)}>show</button>
         </td>
 
         <td>
