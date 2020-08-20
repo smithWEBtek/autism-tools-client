@@ -21,13 +21,13 @@ class Boards extends Component {
     this.props.onFetchBoards()
   }
 
-  //********SHOW_STUDENT handling*****************
+  //********SHOW_BOARD handling*****************
   showBoardClose = () => {
     this.setState({ showBoard: false })
   }
 
   showBoard = (id) => {
-    const board = this.state.boards.filter(board => board.id === id)[0]
+    const board = this.props.boards.filter(board => board.id === id)[0]
     this.setState({
       showBoard: true,
       board: board
@@ -76,9 +76,6 @@ class Boards extends Component {
     let { history } = this.props
     let baseUrl = window.location.host + '/boards'
 
-    console.log("history: ", history)
-    console.log("this.props", this.props)
-
     return (
       <div>
         {/*********CREATE BOARD MODAL********************/}
@@ -108,9 +105,21 @@ class Boards extends Component {
               boards={this.props.boards}
               editBoard={(id) => this.showEditBoardForm(id)}
               deleteBoard={(id) => this.deleteBoard(id)}
+              showBoard={(id) => this.showBoard(id)}
             />
           </div>
         </div>
+
+        {/**********BOARD show modal **************************/}
+        <Modal
+          show={this.state.showBoard}
+          modalClosed={this.showBoardClose}>
+          {this.state.board ? <Board
+            board={this.state.board}
+            close={() => this.showBoardClose()}
+          /> : null}
+        </Modal>
+
         <div>
           <Switch>
             <Route path={`${baseUrl}/:id/edit`} component={EditBoard} />
