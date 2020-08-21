@@ -5,9 +5,9 @@ const Board = (props) => {
   return (
     <div key={props.index} className="board-card">
       <h4>
-        <p>********************************************</p>
+        <p>***************************</p>
         {props.board.name}: {props.board.description}
-        <p>********************************************</p>
+        <p>***************************</p>
       </h4>
     </div>
   );

@@ -14,6 +14,10 @@ const BoardRow = (props) => {
         </td>
 
         <td>
+          {props.board.name}
+        </td>
+
+        <td>
           {props.board.description}
         </td>
 
