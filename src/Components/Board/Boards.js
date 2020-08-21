@@ -3,6 +3,7 @@ import { Route, Switch } from 'react-router-dom';
 import { connect } from 'react-redux';
 import * as actions from '../../Store/Actions/index'
 
+import './Boards.scss'
 import Modal from '../../UI/Modal/Modal'
 import Board from './Board/Board'
 import BoardsIndex from './BoardsIndex/BoardsIndex'
@@ -79,7 +80,7 @@ class Boards extends Component {
     return (
       <div>
         {/*********CREATE BOARD MODAL********************/}
-        <button onClick={this.createBoardFormOpen}>Add Board</button>
+        <button onClick={this.createBoardFormOpen} id='add-board'>Add Board</button>
         <Modal
           show={this.state.createBoard}
           modalClosed={this.createBoardFormCancel}>

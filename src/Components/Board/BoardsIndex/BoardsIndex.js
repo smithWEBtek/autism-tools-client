@@ -23,8 +23,11 @@ const BoardsIndex = (props) => {
         <thead>
           <tr>
             <th>ID</th>
+            <th>Show</th>
             <th>Name</th>
             <th>Description</th>
+            <th>Edit</th>
+            <th>Delete</th>
           </tr>
         </thead>
         <tbody>
