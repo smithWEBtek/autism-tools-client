@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './EditBoard.scss';
 import { connect } from 'react-redux'
-import * as actions from '../../../Store/Actions/BoardActions'
+import * as actions from '../../Store/Actions/BoardActions'
 
 class EditBoard extends Component {
   constructor(props) {

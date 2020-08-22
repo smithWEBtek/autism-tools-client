@@ -14,9 +14,7 @@ class BoardResources extends Component {
   render() {
     return (
       <div>
-        <p>*******************************</p>
-        <h1>The list of BoardResources for `${this.props.board.name}`</h1>
-        <p>*******************************</p>
+        <p>All BoardResources</p>
       </div>
     )
   }

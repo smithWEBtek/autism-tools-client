@@ -1,6 +1,6 @@
 import React from "react";
 import "./Board.scss";
-import BoardResource from '../../BoardResource/BoardResource'
+import BoardResource from '../BoardResource/BoardResource'
 
 const Board = (props) => {
   return (

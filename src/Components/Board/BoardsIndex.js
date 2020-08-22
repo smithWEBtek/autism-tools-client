@@ -1,6 +1,6 @@
 import React from 'react'
 import './BoardsIndex.scss'
-import BoardRow from '../BoardRow/BoardRow'
+import BoardRow from './BoardRow'
 
 const BoardsIndex = (props) => {
   let sortedBoards = props.boards.sort((a, b) => a.name < b.name ? -1 : a.name > b.name ? 1 : 0)
