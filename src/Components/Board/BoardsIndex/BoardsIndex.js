@@ -27,7 +27,7 @@ const BoardsIndex = (props) => {
             <th>Name</th>
             <th>Description</th>
             <th>Edit</th>
-            <th>Delete</th>
+            <th>deleteBoard</th>
           </tr>
         </thead>
         <tbody>
