@@ -1,14 +1,14 @@
 import React, { Component } from 'react';
 import { Route, Switch } from 'react-router-dom';
 import { connect } from 'react-redux';
-import * as actions from '../../Store/Actions/index'
+import * as actions from '../../Store/Actions/BoardActions'
 
 import './Boards.scss'
 import Modal from '../../UI/Modal/Modal'
-import Board from './Board/Board'
-import BoardsIndex from './BoardsIndex/BoardsIndex'
-import CreateBoard from './CreateBoard/CreateBoard'
-import EditBoard from './EditBoard/EditBoard'
+import Board from './Board'
+import BoardsIndex from './BoardsIndex'
+import CreateBoard from './CreateBoard'
+import EditBoard from './EditBoard'
 
 class Boards extends Component {
   state = {
