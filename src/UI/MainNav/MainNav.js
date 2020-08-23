@@ -1,62 +1,69 @@
 import React from "react";
 import { Route, Link } from "react-router-dom";
 import "./MainNav.scss";
+
+import { Toolbar, Button } from '@material-ui/core';
+// import { IconButton } from '@material-ui/core';
+// import AppBar from '@material-ui/core/AppBar';
+// import MenuIcon from '@material-ui/icons/Menu';
+// import Typography from '@material-ui/core/Typography';
+
 const MainNav = () => {
   return (
-    <div className="navbar">
+    <Toolbar variant="dense" >
       <Route>
-        <div className="navbar__link">
-          <Link to="/login" className="navbar__link--text">
+        <Button variant="outlined" color="primary" size="small">
+          <Link to="/login">
             login
           </Link>
-        </div>
-        <div className="navbar__link">
-          <Link to="/users" className="navbar__link--text">
+        </Button>
+        <Button variant="outlined" color="primary" size="small">
+          <Link to="/users">
             users
           </Link>
-        </div>
-        <div className="navbar__link">
-          <Link to="/events" className="navbar__link--text">
+        </Button>
+        <Button variant="outlined" color="primary" size="small">
+          <Link to="/events">
             events
           </Link>
-        </div>
-        <div className="navbar__link">
-          <Link to="/diets" className="navbar__link--text">
+        </Button>
+        <Button variant="outlined" color="primary" size="small">
+          <Link to="/diets">
             diets
           </Link>
-        </div>
-        <div className="navbar__link">
-          <Link to="/treatments" className="navbar__link--text">
+        </Button>
+        <Button variant="outlined" color="primary" size="small">
+          <Link to="/treatments">
             treatments
           </Link>
-        </div>
-        <div className="navbar__link">
-          <Link to="/documents" className="navbar__link--text">
+        </Button>
+        <Button variant="outlined" color="primary" size="small">
+          <Link to="/documents">
             docs
           </Link>
-        </div>
-        <div className="navbar__link">
-          <Link to="/resources" className="navbar__link--text">
+        </Button>
+        <Button variant="outlined" color="primary" size="small">
+          <Link to="/resources">
             resources
           </Link>
-        </div>
-        <div className="navbar__link">
-          <Link to="/boards" className="navbar__link--text">
+        </Button>
+        <Button variant="outlined" color="primary" size="small">
+          <Link to="/boards">
             boards
           </Link>
-        </div>
-        <div className="navbar__link">
-          <Link to="/playlists" className="navbar__link--text">
+        </Button>
+        <Button variant="outlined" color="primary" size="small">
+          <Link to="/playlists">
             playlists
           </Link>
-        </div>
-        <div className="navbar__link">
-          <Link to="/tags" className="navbar__link--text">
+        </Button>
+        <Button variant="outlined" color="primary" size="small">
+          <Link to="/tags">
             tags
           </Link>
-        </div>
+        </Button>
       </Route>
-    </div>
+    </Toolbar>
   );
 };
 

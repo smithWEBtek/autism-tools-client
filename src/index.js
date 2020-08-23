@@ -9,6 +9,10 @@ import boardResourceReducer from './Store/Reducers/BoardResourceReducer'
 import App from './App'
 import './index.scss'
 import ErrorBoundary from './ErrorBoundary';
+
+import CssBaseline from '@material-ui/core/CssBaseline';
+
+
 let dotenv = require('dotenv')
 let dotenvExpand = require('dotenv-expand')
 
@@ -38,9 +42,8 @@ const app = (
   <Provider store={store}>
     <BrowserRouter>
       <ErrorBoundary>
-        <div className="body">
-          <App />
-        </div>
+        <CssBaseline />
+        <App className="body" />
       </ErrorBoundary>
     </BrowserRouter>
   </Provider>
