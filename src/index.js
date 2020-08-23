@@ -5,6 +5,7 @@ import { Provider } from 'react-redux'
 import { createStore, combineReducers, applyMiddleware, compose } from 'redux'
 import thunk from 'redux-thunk'
 import boardReducer from './Store/Reducers/BoardReducer'
+import boardResourceReducer from './Store/Reducers/BoardResourceReducer'
 import App from './App'
 import './index.scss'
 import ErrorBoundary from './ErrorBoundary';
@@ -16,6 +17,7 @@ dotenvExpand(myEnv)
 
 const rootReducer = combineReducers({
   brd: boardReducer,
+  brdres: boardResourceReducer
 })
 
 const logger = store => {
@@ -36,7 +38,9 @@ const app = (
   <Provider store={store}>
     <BrowserRouter>
       <ErrorBoundary>
-        <App className="body" />
+        <div className="body">
+          <App />
+        </div>
       </ErrorBoundary>
     </BrowserRouter>
   </Provider>

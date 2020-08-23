@@ -67,15 +67,6 @@ const reducer = (state = initialState, action) => {
       })
 
     case actionTypes.UPDATE_BOARD:
-      //const boardData = action.updatedBoardData
-      //const boardIndex = state.boards.findIndex(board => board.id === boardData.id);
-      // const stateTemp = {
-      //   ...state,
-      //   boards: [
-      //     ...state.boards.slice(0, boardIndex),
-      //     ...state.boards.slice(boardIndex + 1, state.boards.length)
-      //   ]
-      // };
       const updatedBoardsArray = state.boards.map(board => board.id === action.updatedBoardData.id ? action.updatedBoardData : board)
       return Object.assign({}, state, { boards: updatedBoardsArray })
 
