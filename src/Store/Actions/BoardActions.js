@@ -32,8 +32,8 @@ export const createBoard = (data, history) => {
 export const fetchBoardsStart = () => {
   return { type: actionTypes.FETCH_BOARDS_START }
 }
-export const fetchBoardsSuccess = (boards) => {
-  return { type: actionTypes.FETCH_BOARDS_SUCCESS, boardsList: boards }
+export const fetchBoardsSuccess = () => {
+  return { type: actionTypes.FETCH_BOARDS_SUCCESS }
 }
 export const fetchBoardsFail = (error) => {
   return { type: actionTypes.FETCH_BOARDS_FAIL, error: error }

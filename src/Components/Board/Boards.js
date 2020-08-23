@@ -10,9 +10,11 @@ import BoardsIndex from './BoardsIndex'
 import CreateBoard from './CreateBoard'
 import EditBoard from './EditBoard'
 
+import BoardResources from '../BoardResource/BoardResources'
+
 class Boards extends Component {
   state = {
-    board: '',
+    board: null,
     showBoard: false,
     createBoard: false,
     editBoard: false
@@ -75,6 +77,7 @@ class Boards extends Component {
 
   render() {
     let { history } = this.props
+    console.log('***************HISTORY', history)
     let baseUrl = window.location.host + '/boards'
 
     return (
@@ -109,6 +112,7 @@ class Boards extends Component {
               showBoard={(id) => this.showBoard(id)}
             />
           </div>
+          <BoardResources />
         </div>
 
         {/**********BOARD show modal **************************/}
@@ -137,7 +141,7 @@ class Boards extends Component {
 const mapStateToProps = state => {
   return {
     boards: state.brd.boards
-  };
+  }
 }
 
 const mapDispatchToProps = dispatch => {

@@ -14,11 +14,12 @@ import Documents from "./Components/Document/Documents";
 import Resources from "./Components/Resource/Resources";
 import Playlists from "./Components/Playlist/Playlists";
 import Boards from "./Components/Board/Boards";
+import BoardResources from "./Components/BoardResource/BoardResources";
 import Tags from "./Components/Tag/Tags";
 
 class App extends React.Component {
   render() {
-    console.log("process.env.REACT_APP_API_URL: ", process.env.REACT_APP_API_URL)
+    // console.log("process.env.REACT_APP_API_URL: ", process.env.REACT_APP_API_URL)
     return (
       <Router>
         <div>
@@ -49,6 +50,9 @@ class App extends React.Component {
               </Route>
               <Route path="/boards">
                 <Boards />
+              </Route>
+              <Route path="/board_resources">
+                <BoardResources />
               </Route>
               <Route path="/playlists">
                 <Playlists />
