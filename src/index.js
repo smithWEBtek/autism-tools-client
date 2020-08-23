@@ -10,7 +10,7 @@ import App from './App'
 import './index.scss'
 import ErrorBoundary from './ErrorBoundary';
 
-import CssBaseline from '@material-ui/core/CssBaseline';
+import { CssBaseline } from '@material-ui/core';
 
 
 let dotenv = require('dotenv')
