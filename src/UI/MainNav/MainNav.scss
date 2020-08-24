@@ -21,3 +21,11 @@
     }
   }
 }
+
+button.MuiButton-contained {
+  margin-right: 3px;
+
+  &:hover {
+    background-color: rgb(152, 180, 152);
+  }
+}

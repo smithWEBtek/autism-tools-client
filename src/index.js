@@ -10,8 +10,9 @@ import App from './App'
 import './index.scss'
 import ErrorBoundary from './ErrorBoundary';
 
-import { CssBaseline } from '@material-ui/core';
-
+// import { CssBaseline } from '@material-ui/core';
+import { ThemeProvider } from '@material-ui/core/styles';
+import theme from './theme'
 
 let dotenv = require('dotenv')
 let dotenvExpand = require('dotenv-expand')
@@ -42,8 +43,10 @@ const app = (
   <Provider store={store}>
     <BrowserRouter>
       <ErrorBoundary>
-        <CssBaseline />
-        <App className="body" />
+        {/* <CssBaseline /> */}
+        <ThemeProvider theme={theme}>
+          <App className="body" />
+        </ThemeProvider>
       </ErrorBoundary>
     </BrowserRouter>
   </Provider>
