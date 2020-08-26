@@ -22,72 +22,72 @@ const MainNav = () => {
   return (
     <Toolbar variant="dense" className="navbar">
       <Route>
-        <Button className="navButton" variant="contained" size="small">
+        <Button variant="contained" size="small">
           <Link to="/login">
-            <Typography variant="title" color='primary'>
+            <Typography variant="subtitle1" color='primary'>
               login
             </Typography>
           </Link>
         </Button>
-        <Button className="navButton" variant="contained" size="small" className={useStyles.backgroundColor}>
+        <Button variant="contained" size="small" className={useStyles.backgroundColor}>
           <Link to="/users">
-            <Typography variant="title" color='primary'>
+            <Typography variant="subtitle1" color='primary'>
               users
             </Typography>
           </Link>
         </Button>
-        <Button className="navButton" variant="contained" size="small">
+        <Button variant="contained" size="small">
           <Link to="/events">
-            <Typography variant="title" color='primary'>
+            <Typography variant="subtitle1" color='primary'>
               events
             </Typography>
           </Link>
         </Button>
-        <Button className="navButton" variant="contained" size="small">
+        <Button variant="contained" size="small">
           <Link to="/diets">
-            <Typography variant="title" color='primary'>
+            <Typography variant="subtitle1" color='primary'>
               diets
             </Typography>
           </Link>
         </Button>
-        <Button className="navButton" variant="contained" size="small">
+        <Button variant="contained" size="small">
           <Link to="/treatments">
-            <Typography variant="title" color='primary'>
+            <Typography variant="subtitle1" color='primary'>
               treatments
             </Typography>
           </Link>
         </Button>
-        <Button className="navButton" variant="contained" size="small">
+        <Button variant="contained" size="small">
           <Link to="/documents">
-            <Typography variant="title" color='primary'>
+            <Typography variant="subtitle1" color='primary'>
               docs
             </Typography>
           </Link>
         </Button>
-        <Button className="navButton" variant="contained" size="small">
+        <Button variant="contained" size="small">
           <Link to="/resources">
-            <Typography variant="title" color='primary'>
+            <Typography variant="subtitle1" color='primary'>
               resources
             </Typography>
           </Link>
         </Button>
-        <Button className="navButton" variant="contained" size="small">
+        <Button variant="contained" size="small">
           <Link to="/boards">
-            <Typography variant="title" color='primary'>
+            <Typography variant="subtitle1" color='primary'>
               boards
             </Typography>
           </Link>
         </Button>
-        <Button className="navButton" variant="contained" size="small">
+        <Button variant="contained" size="small">
           <Link to="/playlists">
-            <Typography variant="title" color='primary'>
+            <Typography variant="subtitle1" color='primary'>
               playlists
             </Typography>
           </Link>
         </Button>
-        <Button className="navButton" variant="contained" size="small">
+        <Button variant="contained" size="small">
           <Link to="/tags">
-            <Typography variant="title" color='primary'>
+            <Typography variant="subtitle1" color='primary'>
               tags
             </Typography>
           </Link>
