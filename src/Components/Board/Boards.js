@@ -33,7 +33,7 @@ class Boards extends Component {
 
   //********SHOW_BOARD handling*****************
   showBoardClose = () => {
-    this.setState({ showBoard: false })
+    this.setState({ showBoard: false, board: null })
   }
 
   showBoard = (id) => {
@@ -90,7 +90,7 @@ class Boards extends Component {
     return (
       <div>
         {/*********CREATE BOARD MODAL********************/}
-        {/* <Button onClick={this.createBoardFormOpen} id='add-board'>Add Board</Button> */}
+        <Button onClick={this.showBoardClose} >Boards  </Button>
         <Button onClick={this.createBoardFormOpen} >Add Board</Button>
         <Modal
           show={this.state.createBoard}
@@ -111,27 +111,25 @@ class Boards extends Component {
         </Modal>
 
         {/**********BOARD Index **************************/}
-        <div>
-          <div><h1>BoardsIndex</h1>
-            <BoardsIndex
-              boards={this.props.boards}
-              editBoard={(id) => this.showEditBoardForm(id)}
-              deleteBoard={(id) => this.deleteBoard(id)}
-              showBoard={(id) => this.showBoard(id)}
-            />
+        {this.state.showBoard ? null :
+          <div>
+            <div><h1>BoardsIndex</h1>
+              <BoardsIndex
+                boards={this.props.boards}
+                editBoard={(id) => this.showEditBoardForm(id)}
+                deleteBoard={(id) => this.deleteBoard(id)}
+                showBoard={(id) => this.showBoard(id)}
+              />
+            </div>
+            <BoardResources />
           </div>
-          <BoardResources />
-        </div>
+        }
 
-        {/**********BOARD show modal **************************/}
-        <Modal
-          show={this.state.showBoard}
-          modalClosed={this.showBoardClose}>
-          {this.state.board ? <Board
-            board={this.state.board}
-            close={() => this.showBoardClose()}
-          /> : null}
-        </Modal>
+        {/**********BOARD show **************************/}
+        {this.state.board ? <Board
+          board={this.state.board}
+          close={() => this.showBoardClose()}
+        /> : null}
 
         <div>
           <Switch>
