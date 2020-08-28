@@ -1,9 +1,11 @@
 import React, { Component } from 'react'
 // import { Route, Switch } from 'react-router-dom';
+import BoardResource from '../BoardResource/BoardResource';
+
 import { connect } from 'react-redux'
 import * as actions from '../../Store/Actions/BoardResourceActions'
 
-import './BoardResources.scss'
+import './BoardResource.scss'
 
 class BoardResources extends Component {
   state = {
@@ -18,9 +20,13 @@ class BoardResources extends Component {
   }
 
   render() {
-    const renderBoardResources = this.props.boardResources.map(br => {
+    const renderBoardResources = this.props.boardResources.map(boardResource => {
       return (
-        <div key={br.id} className='board-resource'>{br.resource.name}</div>
+        <BoardResource
+          key={boardResource.id}
+          className='board-resource'
+          boardResource={boardResource}
+        />
       )
     })
 
