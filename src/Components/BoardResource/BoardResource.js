@@ -5,8 +5,8 @@ const BoardResource = (props) => {
 
   return (
     <div className="boardResource">
-      <h3>{props.boardResource.name}</h3>
-      <p>{props.boardResource.description}</p>
+      <h3>{props.boardResource.resource.name}</h3>
+      <p>{props.boardResource.resource.description}</p>
     </div>
   )
 }
