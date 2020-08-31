@@ -19,6 +19,19 @@ class BoardResources extends Component {
     this.props.onFetchBoardResources()
   }
 
+  //********SHOW_BOARD handling*****************
+  showBoardResourceClose = () => {
+    this.setState({ showBoardResource: false, boardResource: null })
+  }
+
+  showBoardResource = (id) => {
+    const boardResource = this.props.boardResources.filter(boardResource => boardResource.id === id)[0]
+    this.setState({
+      showBoardResource: true,
+      boardResource: boardResource
+    })
+  }
+
   render() {
     const renderBoardResources = this.props.boardResources.map(boardResource => {
       return (
@@ -26,6 +39,8 @@ class BoardResources extends Component {
           key={boardResource.id}
           className='board-resource'
           boardResource={boardResource}
+          show={() => this.showBoardResource}
+          close={() => this.showBoardResourceClose}
         />
       )
     })
@@ -36,6 +51,11 @@ class BoardResources extends Component {
         <div>
           {renderBoardResources}
         </div>
+        {/**********BOARD_RESOURCE show **************************/}
+        {this.state.board ? <BoardResource
+          boardResource={this.state.boardResource}
+          close={() => this.showBoardResourceClose()}
+        /> : null}
       </div>
     )
   }
