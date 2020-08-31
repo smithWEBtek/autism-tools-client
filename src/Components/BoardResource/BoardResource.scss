@@ -1,15 +1,16 @@
 .boardResource {
-  background-color: lightblue;
+  background-color: rgb(206, 236, 247);
   border-radius: .5rem;
   border: 2px solid green;
   color: rgb(25, 44, 25);
   display: inline-block;
   height: auto;
   margin: .1rem .1rem;
-  padding: .5rem .5rem .5rem 1rem;
+  padding-left: .5rem;
   width: 60%;
 
   &:hover {
-    border: 3px solid rgb(3, 248, 36);
+    border: 2px solid rgb(3, 248, 36);
+    background-color: rgb(179, 226, 204);
   }
 }
