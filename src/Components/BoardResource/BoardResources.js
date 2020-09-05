@@ -52,7 +52,7 @@ class BoardResources extends Component {
           {renderBoardResources}
         </div>
         {/**********BOARD_RESOURCE show **************************/}
-        {this.state.board ? <BoardResource
+        {this.state.boardResource ? <BoardResource
           boardResource={this.state.boardResource}
           close={() => this.showBoardResourceClose()}
         /> : null}

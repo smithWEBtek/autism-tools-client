@@ -1,8 +1,6 @@
 import React from 'react';
 
 const BoardResource = (props) => {
-  console.log('[BoardResource]')
-
   return (
     <div className="boardResource">
       <h3>{props.boardResource.resource.name}</h3>

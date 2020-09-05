@@ -7,7 +7,7 @@ const Board = (props) => {
     return (
       <div key={id}>
         <BoardResource
-          boardResource={boardResource.resource}
+          boardResource={boardResource}
         />
       </div>
     )
