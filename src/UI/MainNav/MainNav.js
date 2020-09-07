@@ -3,10 +3,6 @@ import { Route, Link } from "react-router-dom";
 import "./MainNav.scss";
 
 import { Toolbar, Button, Typography } from '@material-ui/core';
-// import { IconButton } from '@material-ui/core';
-// import AppBar from '@material-ui/core/AppBar';
-// import MenuIcon from '@material-ui/icons/Menu';
-
 import { makeStyles } from '@material-ui/core/styles';
 
 const useStyles = makeStyles({
