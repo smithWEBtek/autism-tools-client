@@ -14,8 +14,8 @@ const BoardResource = (props) => {
       <p>{props.boardResource.resource.description}</p>
       <Iframe
         title={props.boardResource.resource.name}
-        width="560"
-        height="315"
+        width="300"
+        height="200"
         src={href}
         frameborder="0"
         sandbox="allow-same-origin allow-scripts allow-popups allow-forms"
