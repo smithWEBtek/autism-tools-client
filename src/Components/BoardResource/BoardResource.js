@@ -1,5 +1,4 @@
 import React from 'react';
-import Iframe from 'react-iframe'
 
 const BoardResource = (props) => {
   const hrefRegex = new RegExp('https');
@@ -12,15 +11,7 @@ const BoardResource = (props) => {
     <div className="boardResource">
       <h3>{props.boardResource.resource.name}</h3>
       <p>{props.boardResource.resource.description}</p>
-      <Iframe
-        title={props.boardResource.resource.name}
-        width="300"
-        height="200"
-        src={href}
-        frameborder="0"
-        sandbox="allow-same-origin allow-scripts allow-popups allow-forms"
-        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-        allowfullscreen />
+      <a href={props.boardResource.resource.location}>LINK</a>
     </div>
   )
 }
