@@ -12,6 +12,7 @@ const BoardResource = (props) => {
       <h3>{props.boardResource.resource.name}</h3>
       <p>{props.boardResource.resource.description}</p>
       <a href={props.boardResource.resource.location}>LINK</a>
+      <p>lorem</p>
     </div>
   )
 }
