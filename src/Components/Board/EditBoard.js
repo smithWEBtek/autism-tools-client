@@ -1,19 +1,15 @@
 import React, { Component } from 'react';
-import './EditBoard.scss';
+import './CreateEditBoard.scss';
 import { connect } from 'react-redux'
 import * as actions from '../../Store/Actions/BoardActions'
 
 class EditBoard extends Component {
-  constructor(props) {
-    super(props)
-
-    this.state = {
-      board: '',
-      id: '',
-      name: '',
-      description: '',
-      close: null
-    }
+  state = {
+    board: '',
+    id: '',
+    name: '',
+    description: '',
+    close: null
   }
 
   componentDidMount() {
@@ -72,16 +68,16 @@ class EditBoard extends Component {
   render() {
     return (
       <div>
-        <p className="FormInstructions">Edit form and click 'Update Board'</p>
+        <p className="BoardFormInstructions">Edit form and click 'Update Board'</p>
         <form className="Form">
-          <p><label htmlFor="board_name">First name </label>
+          <p><label htmlFor="board_name">Name </label>
             <input
               type="text"
               name="name"
               value={this.state.name}
               onChange={this.handleChange}
             /></p>
-          <p><label>Last name </label>
+          <p><label>Description </label>
             <input
               type="text"
               name="description"
