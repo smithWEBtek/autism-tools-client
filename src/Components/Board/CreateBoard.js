@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './CreateBoard.scss'
+import './CreateEditBoard.scss'
 
 class CreateBoard extends Component {
   constructor(props) {
