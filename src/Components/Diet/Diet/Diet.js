@@ -1,5 +1,6 @@
 import React from "react";
 import "./Diet.scss";
+
 const Diet = (props) => {
   return (
     <div key={props.index} className="diet-card">
