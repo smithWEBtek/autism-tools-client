@@ -1,5 +1,7 @@
 import React from "react";
 import Diet from "./Diet/Diet";
+import DietMealsIndex from "./DietMeal/DietMealIndex";
+
 const API_URL = process.env.REACT_APP_API_URL
 
 class Diets extends React.Component {
@@ -23,6 +25,12 @@ class Diets extends React.Component {
   };
 
   render() {
+    const dietMeals = [
+      { diet: 'Veggie', meal: 'Soup & Sandwich' },
+      { diet: 'Veggie', meal: 'Fish  casserole' },
+      { diet: 'Veggie', meal: 'Burrito plate' }
+    ]
+
     let renderedDiets;
     if (this.state.visible) {
       renderedDiets = this.state.diets.map((diet, index) => {
@@ -37,6 +45,7 @@ class Diets extends React.Component {
         </h2>
         <p>Diets | Meals | Recipes | Rules</p>
         {renderedDiets}
+        <DietMealsIndex dietMeals={dietMeals} />
       </div>
     );
   }
