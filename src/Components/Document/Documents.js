@@ -3,13 +3,10 @@ import Document from "./Document";
 const API_URL = process.env.REACT_APP_API_URL
 
 class Documents extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      visible: false,
-      documents: [],
-    };
-  }
+  state = {
+    visible: false,
+    documents: [],
+  };
 
   componentDidMount() {
     fetch(`${API_URL}/documents`)

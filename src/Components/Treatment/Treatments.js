@@ -4,13 +4,10 @@ import Treatment from "./Treatment";
 const API_URL = process.env.REACT_APP_API_URL
 
 class Treatments extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      visible: false,
-      treatments: [],
-    };
-  }
+  state = {
+    visible: false,
+    treatments: [],
+  };
 
   componentDidMount() {
     fetch(`${API_URL}/treatments`)

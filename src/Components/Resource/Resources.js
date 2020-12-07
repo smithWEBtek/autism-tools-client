@@ -4,13 +4,10 @@ import Resource from "./Resource";
 const API_URL = process.env.REACT_APP_API_URL
 
 class Resources extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      visible: false,
-      resources: [],
-    };
-  }
+  state = {
+    visible: false,
+    resources: [],
+  };
 
   componentDidMount() {
     fetch(`${API_URL}/resources`)

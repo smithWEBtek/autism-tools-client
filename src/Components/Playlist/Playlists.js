@@ -4,13 +4,10 @@ import Playlist from "./Playlist";
 const API_URL = process.env.REACT_APP_API_URL
 
 class Playlists extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      visible: false,
-      playlists: [],
-    };
-  }
+  state = {
+    visible: false,
+    playlists: [],
+  };
 
   componentDidMount() {
     fetch(`${API_URL}/playlists`)

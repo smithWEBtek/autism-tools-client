@@ -4,13 +4,10 @@ import User from "./User";
 const API_URL = process.env.REACT_APP_API_URL
 
 class Users extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      visible: false,
-      users: [],
-    };
-  }
+  state = {
+    visible: false,
+    users: [],
+  };
 
   componentDidMount() {
     fetch(`${API_URL}/users`)

@@ -2,13 +2,9 @@ import React, { Component } from 'react';
 import './CreateEditBoard.scss'
 
 class CreateBoard extends Component {
-  constructor(props) {
-    super(props)
-
-    this.state = {
-      name: '',
-      description: ''
-    }
+  state = {
+    name: '',
+    description: ''
   }
 
   componentDidMount() {
