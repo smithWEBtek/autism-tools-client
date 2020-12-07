@@ -4,13 +4,10 @@ import Event from "./Event";
 const API_URL = process.env.REACT_APP_API_URL
 
 class Events extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      visible: false,
-      events: [],
-    };
-  }
+  state = {
+    visible: false,
+    events: [],
+  };
 
   componentDidMount() {
     fetch(`${API_URL}/events`)

@@ -4,16 +4,12 @@ import { connect } from 'react-redux'
 import * as actions from '../../Store/Actions/BoardActions'
 
 class EditBoard extends Component {
-  constructor(props) {
-    super(props)
-
-    this.state = {
-      boardResource: '',
-      id: '',
-      name: '',
-      description: '',
-      close: null
-    }
+  state = {
+    boardResource: '',
+    id: '',
+    name: '',
+    description: '',
+    close: null
   }
 
   componentDidMount() {

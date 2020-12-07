@@ -4,13 +4,10 @@ import Tag from "./Tag";
 const API_URL = process.env.REACT_APP_API_URL
 
 class Tags extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      visible: false,
-      tags: [],
-    };
-  }
+  state = {
+    visible: false,
+    tags: [],
+  };
 
   componentDidMount() {
     fetch(`${API_URL}/tags`)

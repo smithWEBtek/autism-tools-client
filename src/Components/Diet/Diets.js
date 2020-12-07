@@ -5,13 +5,10 @@ import DietMealsIndex from "./DietMeal/DietMealIndex";
 const API_URL = process.env.REACT_APP_API_URL
 
 class Diets extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      visible: false,
-      diets: [],
-    };
-  }
+  state = {
+    visible: false,
+    diets: [],
+  };
 
   componentDidMount() {
     fetch(`${API_URL}/diets`)
